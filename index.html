@@ -4,11 +4,288 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <!-- fond cmd -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&family=Google+Sans:ital,opsz,wght@0,17..18,400..700;1,17..18,400..700&display=swap"
+        rel="stylesheet">
+    <title>Job Application Tracker</title>
+    <style></style>
 </head>
 
-<body>
+<body class="bg-base-200 min-h-[100vh]">
+    <header class=" max-w-[80%] m-auto py-5 border-b-2 border-neutral/30">
+        <h1 class="text-[32px] font-bold mb-4">Job Application Tracker</h1>
+        <div class="benar grid grid-cols-3 gap-4">
+            <div class="div bg-base-100 p-4 rounded-xl">
+                <h1 class="font-medium text-neutral/60">Total</h1>
+                <p class="totalTracker text-4xl font-bold">0</p>
+            </div>
+            <div class="div bg-base-100 p-4 rounded-xl">
+                <h1 class=" font-medium text-neutral/60">Interview</h1>
+                <p class="interviewTracker text-4xl text-success/80 font-bold">0</p>
+            </div>
+            <div class="div bg-base-100 p-4 rounded-xl">
+                <h1 class="font-medium text-neutral/60">Rejected</h1>
+                <p class="RejectedTracker text-4xl  text-error font-bold">0</p>
+            </div>
+        </div>
+    </header>
+    <main>
+        <section class="Available max-w-[80%] m-auto my-3">
+            <div class="flex justify-between ">
+                <h1 class="text-2xl font-bold">Available Jobs</h1>
+                <h1 class="font-semibold"><span class="total-job">8</span> Jobs</h1>
+            </div>
+        </section>
+        <section class=" flex gap-5 max-w-[80%] m-auto my-6">
+            <button id="btn001" onclick="btnColorChange('btn001')"
+                class="font-semibold bg-primary text-xl bg-base-100 w-30 h-14 rounded-xl text-white">All</button>
+            <button id="interview" onclick="btnColorChange('interview')"
+                class=" font-semibold bg-base-100 text-xl w-30 h-14 rounded-xl">Interview</button>
+            <button id="reject" onclick="btnColorChange('reject')"
+                class="  font-semibold bg-base-100 text-xl w-30 h-14 rounded-xl">Rejected</button>
+        </section>
 
+        <!-- faka array -->
+        <section class="fala-Array hidden max-w-[80%] m-auto my-6 bg-base-100 p-4 rounded-xl">
+
+        </section>
+        <!-- rejected faka array -->
+        <section class="fala-Array-rejected hidden max-w-[80%] m-auto my-6 bg-base-100 p-4 rounded-xl">
+
+        </section>
+
+
+
+
+        <section class="job-main-container">
+
+
+
+            <section class="job-01 max-w-[80%] m-auto my-6 bg-base-100 p-4 rounded-xl">
+                <div class="flex justify-between">
+                    <!-- 1st part -->
+                    <div class="space-y-3">
+                        <h1 class="job-name text-xl font-semibold">Mobile First Corp 01</h1>
+                        <h1 class="job-quliti text-neutral/60">React Native Developer</h1>
+                        <h1 class="job-sistem text-neutral/60">Remote • Full-time • $130,000 - $175,000</h1>
+                        <button id="states-btn" class="  text-xl bg-[#EEF4FF] py-2 px-5 rounded-xl">Not Applied</button>
+                        <h1 class="descripsion">Build cross-platform mobile applications using React Native. Work on
+                            products used by
+                            millions of users worldwide.</h1>
+                        <div class="div flex gap-3">
+                            <button
+                                class=" interview btn btn-outline btn-success uppercase py-3 px-6 rounded-xl">interview</button>
+                            <button
+                                class=" Rejected btn btn-outline btn-secondary uppercase py-3 px-6 rounded-xl">Rejected</button>
+                        </div>
+                    </div>
+                    <!-- part-02 -->
+                    <div
+                        class=" w-7 h-7 border-neutral/50 border-2 rounded-[50%] flex justify-center items-center delete-btn">
+                        <img src="asset/Trash.png" alt="" srcset="">
+                    </div>
+                </div>
+            </section>
+            <section class="job-02 max-w-[80%] m-auto my-6 bg-base-100 p-4 rounded-xl">
+                <div class="flex justify-between">
+                    <!-- 1st part -->
+                    <div class="space-y-3">
+                        <h1 class="job-name text-xl font-semibold">Mobile First Corp 02</h1>
+                        <h1 class="job-quliti text-neutral/60">React Native Developer</h1>
+                        <h1 class="job-sistem text-neutral/60">Remote • Full-time • $130,000 - $175,000</h1>
+                        <button id="states-btn" class="  text-xl bg-[#EEF4FF] py-2 px-5 rounded-xl">Not Applied</button>
+                        <h1 class="descripsion">Build cross-platform mobile applications using React Native. Work on
+                            products used by
+                            millions of users worldwide.</h1>
+                        <div class="div flex gap-3">
+                            <button
+                                class=" interview btn btn-outline btn-success uppercase py-3 px-6 rounded-xl">interview</button>
+                            <button
+                                class=" Rejected btn btn-outline btn-secondary uppercase py-3 px-6 rounded-xl">Rejected</button>
+                        </div>
+                    </div>
+                    <!-- part-02 -->
+                    <div
+                        class=" w-7 h-7 border-neutral/50 border-2 rounded-[50%] flex justify-center items-center delete-btn">
+                        <img src="asset/Trash.png" alt="" srcset="">
+                    </div>
+                </div>
+            </section>
+            <section class="job-03 max-w-[80%] m-auto my-6 bg-base-100 p-4 rounded-xl">
+                <div class="flex justify-between">
+                    <!-- 1st part -->
+                    <div class="space-y-3">
+                        <h1 class="job-name text-xl font-semibold">Mobile First Corp 03</h1>
+                        <h1 class="job-quliti text-neutral/60">React Native Developer</h1>
+                        <h1 class="job-sistem text-neutral/60">Remote • Full-time • $130,000 - $175,000</h1>
+                        <button id="states-btn" class="  text-xl bg-[#EEF4FF] py-2 px-5 rounded-xl">Not Applied</button>
+                        <h1 class="descripsion">Build cross-platform mobile applications using React Native. Work on
+                            products used by
+                            millions of users worldwide.</h1>
+                        <div class="div flex gap-3">
+                            <button
+                                class=" interview btn btn-outline btn-success uppercase py-3 px-6 rounded-xl">interview</button>
+                            <button
+                                class=" Rejected btn btn-outline btn-secondary uppercase py-3 px-6 rounded-xl">Rejected</button>
+                        </div>
+                    </div>
+                    <!-- part-02 -->
+                    <div
+                        class=" w-7 h-7 border-neutral/50 border-2 rounded-[50%] flex justify-center items-center delete-btn">
+                        <img src="asset/Trash.png" alt="" srcset="">
+                    </div>
+                </div>
+            </section>
+            <section class="job-04 max-w-[80%] m-auto my-6 bg-base-100 p-4 rounded-xl">
+                <div class="flex justify-between">
+                    <!-- 1st part -->
+                    <div class="space-y-3">
+                        <h1 class="job-name text-xl font-semibold">Mobile First Corp 04</h1>
+                        <h1 class="job-quliti text-neutral/60">React Native Developer</h1>
+                        <h1 class="job-sistem text-neutral/60">Remote • Full-time • $130,000 - $175,000</h1>
+                        <button id="states-btn" class="  text-xl bg-[#EEF4FF] py-2 px-5 rounded-xl">Not Applied</button>
+                        <h1 class="descripsion">Build cross-platform mobile applications using React Native. Work on
+                            products used by
+                            millions of users worldwide.</h1>
+                        <div class="div flex gap-3">
+                            <button
+                                class=" interview btn btn-outline btn-success uppercase py-3 px-6 rounded-xl">interview</button>
+                            <button
+                                class=" Rejected btn btn-outline btn-secondary uppercase py-3 px-6 rounded-xl">Rejected</button>
+                        </div>
+                    </div>
+                    <!-- part-02 -->
+                    <div
+                        class=" w-7 h-7 border-neutral/50 border-2 rounded-[50%] flex justify-center items-center delete-btn">
+                        <img src="asset/Trash.png" alt="" srcset="">
+                    </div>
+                </div>
+            </section>
+            <section class="job-05 max-w-[80%] m-auto my-6 bg-base-100 p-4 rounded-xl">
+                <div class="flex justify-between">
+                    <!-- 1st part -->
+                    <div class="space-y-3">
+                        <h1 class="job-name text-xl font-semibold">Mobile First Corp 05</h1>
+                        <h1 class="job-quliti text-neutral/60">React Native Developer</h1>
+                        <h1 class="job-sistem text-neutral/60">Remote • Full-time • $130,000 - $175,000</h1>
+                        <button id="states-btn" class="  text-xl bg-[#EEF4FF] py-2 px-5 rounded-xl">Not Applied</button>
+                        <h1 class="descripsion">Build cross-platform mobile applications using React Native. Work on
+                            products used by
+                            millions of users worldwide.</h1>
+                        <div class="div flex gap-3">
+                            <button
+                                class=" interview btn btn-outline btn-success uppercase py-3 px-6 rounded-xl">interview</button>
+                            <button
+                                class=" Rejected btn btn-outline btn-secondary uppercase py-3 px-6 rounded-xl">Rejected</button>
+                        </div>
+                    </div>
+                    <!-- part-02 -->
+                    <div
+                        class=" w-7 h-7 border-neutral/50 border-2 rounded-[50%] flex justify-center items-center delete-btn">
+                        <img src="asset/Trash.png" alt="" srcset="">
+                    </div>
+                </div>
+            </section>
+            <section class="job-06 max-w-[80%] m-auto my-6 bg-base-100 p-4 rounded-xl">
+                <div class="flex justify-between">
+                    <!-- 1st part -->
+                    <div class="space-y-3">
+                        <h1 class="job-name text-xl font-semibold">Mobile First Corp 06</h1>
+                        <h1 class="job-quliti text-neutral/60">React Native Developer</h1>
+                        <h1 class="job-sistem text-neutral/60">Remote • Full-time • $130,000 - $175,000</h1>
+                        <button id="states-btn" class="  text-xl bg-[#EEF4FF] py-2 px-5 rounded-xl">Not Applied</button>
+                        <h1 class="descripsion">Build cross-platform mobile applications using React Native. Work on
+                            products used by
+                            millions of users worldwide.</h1>
+                        <div class="div flex gap-3">
+                            <button
+                                class=" interview btn btn-outline btn-success uppercase py-3 px-6 rounded-xl">interview</button>
+                            <button
+                                class=" Rejected btn btn-outline btn-secondary uppercase py-3 px-6 rounded-xl">Rejected</button>
+                        </div>
+                    </div>
+                    <!-- part-02 -->
+                    <div
+                        class=" w-7 h-7 border-neutral/50 border-2 rounded-[50%] flex justify-center items-center delete-btn">
+                        <img src="asset/Trash.png" alt="" srcset="">
+                    </div>
+                </div>
+            </section>
+            <section class="job-07 max-w-[80%] m-auto my-6 bg-base-100 p-4 rounded-xl">
+                <div class="flex justify-between">
+                    <!-- 1st part -->
+                    <div class="space-y-3">
+                        <h1 class="job-name text-xl font-semibold">Mobile First Corp 07</h1>
+                        <h1 class="job-quliti text-neutral/60">React Native Developer</h1>
+                        <h1 class="job-sistem text-neutral/60">Remote • Full-time • $130,000 - $175,000</h1>
+                        <button id="states-btn" class="  text-xl bg-[#EEF4FF] py-2 px-5 rounded-xl">Not Applied</button>
+                        <h1 class="descripsion">Build cross-platform mobile applications using React Native. Work on
+                            products used by
+                            millions of users worldwide.</h1>
+                        <div class="div flex gap-3">
+                            <button
+                                class=" interview btn btn-outline btn-success uppercase py-3 px-6 rounded-xl">interview</button>
+                            <button
+                                class=" Rejected btn btn-outline btn-secondary uppercase py-3 px-6 rounded-xl">Rejected</button>
+                        </div>
+                    </div>
+                    <!-- part-02 -->
+                    <div
+                        class=" w-7 h-7 border-neutral/50 border-2 rounded-[50%] flex justify-center items-center delete-btn">
+                        <img src="asset/Trash.png" alt="" srcset="">
+                    </div>
+                </div>
+            </section>
+            <section class="job-08 max-w-[80%] m-auto my-6 bg-base-100 p-4 rounded-xl">
+                <div class="flex justify-between">
+                    <!-- 1st part -->
+                    <div class="space-y-3">
+                        <h1 class="job-name text-xl font-semibold">Mobile First Corp 08</h1>
+                        <h1 class="job-quliti text-neutral/60">React Native Developer</h1>
+                        <h1 class="job-sistem text-neutral/60">Remote • Full-time • $130,000 - $175,000</h1>
+                        <button id="states-btn" class="  text-xl bg-[#EEF4FF] py-2 px-5 rounded-xl">Not Applied</button>
+                        <h1 class="descripsion">Build cross-platform mobile applications using React Native. Work on
+                            products used by
+                            millions of users worldwide.</h1>
+                        <div class="div flex gap-3">
+                            <button
+                                class=" interview btn btn-outline btn-success uppercase py-3 px-6 rounded-xl">interview</button>
+                            <button
+                                class=" Rejected btn btn-outline btn-secondary uppercase py-3 px-6 rounded-xl">Rejected</button>
+                        </div>
+                    </div>
+                    <!-- part-02 -->
+                    <div
+                        class=" w-7 h-7 border-neutral/50 border-2 rounded-[50%] flex justify-center items-center delete-btn">
+                        <img src="asset/Trash.png" alt="" srcset="">
+                    </div>
+                </div>
+            </section>
+
+
+
+
+
+
+        </section>
+
+
+        <section class="noJob hidden max-w-[80%] m-auto">
+            <div class="text flex flex-col justify-center items-center bg-base-100 py-20 rounded-xl">
+                <img class="pb-3" src="asset/assignment_7959593 1.png" alt="">
+                <h1 class="pb-3 text-2xl">No jobs available</h1>
+                <p class="text-neutral/60">Check back soon for new job opportunities</p>
+            </div>
+
+        </section>
+
+    </main>
+    <script src="script.js"></script>
 </body>
 
 </html>
